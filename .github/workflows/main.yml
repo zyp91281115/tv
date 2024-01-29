@@ -1,11 +1,7 @@
 name: IPTV All
 on:
   push:
-    schedule:
-      - name: daily_task
-        description: Run task every day at 4:00 PM
-        cron: "0 16 * * *"
-    branches:
+branches:
       - main
 jobs:
   build:
@@ -13,13 +9,12 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-    
-      - name: Set up Python
+          - name: Set up Python
         uses: actions/setup-python@v2
         with:
           python-version: 3.x
       - name: Install dependencies
-        run: pip install selenium requests futures opencv-python
+        run: pip install selenium requests
       - name: Install Chrome WebDriver
         run: |
           LATEST_CHROMEDRIVER_VERSION=120.0.6099.109
@@ -32,24 +27,10 @@ jobs:
           sudo chmod +x /usr/local/bin/chromedriver
       - name: Run script
         run: python ${{ github.workspace }}/IPTV.py
-      - name: iptv_sort
-        run: python ${{ github.workspace }}/iptv_sort.py
-
-      #- name: iptv_speed
-      #  run: python ${{ github.workspace }}/IPTV_speed.py
-      - name: download_speed
-        run: python ${{ github.workspace }}/download_speed.py
-
-      - name: Upload a Build Artifact
-        uses: actions/upload-artifact@v4.0.0
-        with:
-          name: iptv-all
-          path: ${{ github.workspace }}/
       - name: 提交更改
         run: |
-          git config --local user.email "781222819.com"
+          git config --local user.email "781222819@qq.com"
           git config --local user.name "zyp91281120"
           git add .
           git commit *.txt -m "Add generated file"
-          #git pull --rebase
           git push -f
