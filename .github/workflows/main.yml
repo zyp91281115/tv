@@ -1,14 +1,22 @@
 name: IPTV All
+
 on:
   push:
-branches:
+    schedule:
+      - name: daily_task
+        description: Run task every day at 4:00 PM
+        cron: "0 16 * * *"
+    branches:
       - main
+
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+    
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
