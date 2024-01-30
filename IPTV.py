@@ -13,7 +13,7 @@ shanghai = "https://fofa.info/result?qbase64=ImlwdHYvbGl2ZS96aF9jbi5qcyIgJiYgY29
 tianjin = "https://fofa.info/result?qbase64=ImlwdHYvbGl2ZS96aF9jbi5qcyIgJiYgY291bnRyeT0iQ04iICYmIHJlZ2lvbj0idGlhbmppbiI%3D"    #天津
 chongqing = "https://fofa.info/result?qbase64=ImlwdHYvbGl2ZS96aF9jbi5qcyIgJiYgY291bnRyeT0iQ04iICYmIHJlZ2lvbj0iY2hvbmdxaW5nIg%3D%3D"    #重庆
 shanxi = "https://fofa.info/result?qbase64=ImlwdHYvbGl2ZS96aF9jbi5qcyIgJiYgY291bnRyeT0iQ04iICYmIHJlZ2lvbj0ic2hhbnhpIg%3D%3D"    #山西
-shaanxi = "https://fofa.info/result?qbase64=ImlwdHYvbGl2ZS96aF9jbi5qcyIgJiYgY291bnRyeT0iQ04iICYmIHJlZ2lvbj0iU2hhYW54aSI%3D"    #陕西
+sichuan = "https://fofa.info/result?qbase64=ImlwdHYvbGl2ZS96aF9jbi5qcyIgJiYgY291bnRyeT0iQ04iICYmIHJlZ2lvbj0ic2ljaHVhbiI%3D"    #四川
 liaoning = "https://fofa.info/result?qbase64=ImlwdHYvbGl2ZS96aF9jbi5qcyIgJiYgY291bnRyeT0iQ04iICYmIHJlZ2lvbj0ibGlhb25pbmci"    #辽宁
 jiangsu = "https://fofa.info/result?qbase64=ImlwdHYvbGl2ZS96aF9jbi5qcyIgJiYgY291bnRyeT0iQ04iICYmIHJlZ2lvbj0iamlhbmdzdSI%3D"    #江苏
 zhejiang = "https://fofa.info/result?qbase64=ImlwdHYvbGl2ZS96aF9jbi5qcyIgJiYgY291bnRyeT0iQ04iICYmIHJlZ2lvbj0iemhlamlhbmci"    #浙江
@@ -216,8 +216,8 @@ results_shanxi = process_url(shanxi)
 save_results(results_shanxi, "shanxi.txt")
 
 # 处理第8个URL
-results_shaanxi = process_url(shaanxi)
-save_results(results_shaanxi, "shaanxi.txt")
+results_sichuan = process_url(sichuan)
+save_results(results_sichuan, "sichuan.txt")
 
 # 处理第9个URL
 results_liaoning = process_url(liaoning)
@@ -261,7 +261,7 @@ save_results(results_hunan, "hunan.txt")
 
 # 合并文件内容
 file_contents = []
-file_paths = ["hebei.txt", "beijing.txt", "guangdong.txt", "shanghai.txt", "tianjin.txt", "chongqing.txt", "shanxi.txt", "shaanxi.txt", "liaoning.txt", "jiangsu.txt", "zhejiang.txt", "anhui.txt", "fujian.txt", "jiangxi.txt", "shandong.txt", "henan.txt", "hubei.txt", "hunan.txt"]  # 替换为实际的文件路径列表
+file_paths = ["hebei.txt", "beijing.txt", "guangdong.txt", "shanghai.txt", "tianjin.txt", "chongqing.txt", "shanxi.txt", "sichuan.txt", "liaoning.txt", "jiangsu.txt", "zhejiang.txt", "anhui.txt", "fujian.txt", "jiangxi.txt", "shandong.txt", "henan.txt", "hubei.txt", "hunan.txt"]  # 替换为实际的文件路径列表
 for file_path in file_paths:
     with open(file_path, 'r', encoding="utf-8") as file:
         content = file.read()
